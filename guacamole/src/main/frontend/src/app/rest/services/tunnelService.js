@@ -103,11 +103,17 @@ angular.module('rest').factory('tunnelService', ['$injector',
         };
 
         // Retrieve the protocol details of the specified tunnel
-        return requestService({
+        // return requestService({
+        //     method  : 'GET',
+        //     url     : 'api/session/tunnels/' + encodeURIComponent(tunnel)
+        //                 + '/protocol',
+        //     params  : httpParameters
+        // });
+
+        return authenticationService.request({
             method  : 'GET',
             url     : 'api/session/tunnels/' + encodeURIComponent(tunnel)
-                        + '/protocol',
-            params  : httpParameters
+                        + '/protocol'
         });
 
     };
